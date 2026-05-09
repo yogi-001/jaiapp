@@ -24,3 +24,4 @@ android.build_tools_version = 34.0.0
 fullscreen = 0
 
 android.request_legacy_storage = True
+android.accept_sdk_license = True
