@@ -31,13 +31,15 @@ jobs:
           zip unzip git openjdk-17-jdk \
           build-essential autoconf libtool \
           pkg-config zlib1g-dev
-          
+
     - name: Install Python Packages
       run: |
-        pip install --upgrade pip
-        pip install cython==0.29.36
-        pip install buildozer==1.5.0
-        pip install python-for-android==2024.01.21
+       pip install --upgrade pip
+       pip install setuptools==69.5.1
+       pip install wheel
+       pip install cython==0.29.36
+       pip install buildozer==1.5.0
+       pip install python-for-android==2024.01.21
 
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
@@ -63,3 +65,8 @@ jobs:
       with:
         name: apk
         path: bin/*.apk
+
+    - name: Install libtool
+      run: |
+       sudo apt update
+       sudo apt install -y libtool autoconf automake
